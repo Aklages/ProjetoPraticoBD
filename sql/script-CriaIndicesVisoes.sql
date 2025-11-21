@@ -1,20 +1,6 @@
--- Índices para chaves estrangeiras (joins e CASCADE)
-CREATE INDEX idx_buffet_fk_cerimonial ON buffet (fk_cnpj_cerimonial);
-CREATE INDEX idx_cardapio_fk_buffet ON cardapio (fk_cnpj_buffet);
-CREATE INDEX idx_formatura_fk_cerimonial ON formatura (fk_cnpj_cerimonial);
-CREATE INDEX idx_evento_fk_formatura ON evento (fk_cod_formatura);
-CREATE INDEX idx_evento_fk_cardapio ON evento (fk_cod_cardapio);
-CREATE INDEX idx_funcionario_fk_tipo ON funcionario (fk_cod_tipo_profissional);
-CREATE INDEX idx_evento_funcionario_matricula ON evento_funcionario (matricula);
-CREATE INDEX idx_evento_funcionario_evento ON evento_funcionario (cod_evento);
-CREATE INDEX idx_telefone_fk_matricula ON telefone (fk_matricula);
-CREATE INDEX idx_ca_cardapio ON cardapio_aperitivo (cod_cardapio);
-CREATE INDEX idx_ca_aperitivo ON cardapio_aperitivo (cod_aperitivo);
-
--- Índices para ORDER BY
+-- Índices
 CREATE INDEX idx_evento_data_evento ON evento (data_evento);
-CREATE INDEX idx_funcionario_nome ON funcionario (nome);
-CREATE INDEX idx_cardapio_nome ON cardapio (nome);
+CREATE INDEX idx_aperitivo_preco_pessoa ON aperitivo (preco_pessoa);
 
 -- View evento completo
 CREATE VIEW vw_evento_completo AS
